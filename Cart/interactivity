@@ -1,0 +1,47 @@
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartCount();
+    alert(name + " added to cart!");
+}
+
+function updateCartCount() {
+    document.getElementById("cartCount").innerText = cart.length;
+}
+
+document.getElementById("cartBtn").onclick = function() {
+    showCart();
+};
+
+document.getElementById("closeCart").onclick = function() {
+    document.getElementById("cartModal").style.display = "none";
+};
+
+function showCart() {
+    let cartList = document.getElementById("cartItems");
+    cartList.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        let li = document.createElement("li");
+        li.innerHTML = `${item.name} — $${item.price.toFixed(2)}
+            <button onclick="removeItem(${index})">Remove</button>`;
+        cartList.appendChild(li);
+        total += item.price;
+    });
+
+    document.getElementById("cartTotal").innerText = total.toFixed(2);
+    document.getElementById("cartModal").style.display = "block";
+}
+
+function removeItem(i) {
+    cart.splice(i, 1);
+    updateCartCount();
+    showCart();
+}
+
+document.getElementById("checkoutBtn").onclick = function() {
+    window.location.href = "https://www.paypal.com/pay"; // replace with your checkout link
+};
