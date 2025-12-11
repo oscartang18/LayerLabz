@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D LayerLab </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🧩 3D Print Gadget Shop </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#" id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Custom 3D Printed Gadgets, Tools & Accessories</h2>
+        <p>Unique designs • Fast printing • Shipped worldwide</p>
+    </section>
+
+    <section id="shop" class="products">
+        <h2>Shop Products</h2>
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product">
+                <img src="images/cableholder.jpg" alt="Cable Holder">
+                <h3>Cable Holder Clip</h3>
+                <p>$6.99</p>
+                <button onclick="addToCart('Cable Holder Clip', 6.99)">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product">
+                <img src="images/phone-stand.jpg" alt="Phone Stand">
+                <h3>Adjustable Phone Stand</h3>
+                <p>$12.99</p>
+                <button onclick="addToCart('Adjustable Phone Stand', 12.99)">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product">
+                <img src="images/keychain.jpg" alt="Custom Keychain">
+                <h3>Custom Name Keychain</h3>
+                <p>$9.99</p>
+                <button onclick="addToCart('Custom Name Keychain', 9.99)">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="product">
+                <img src="images/planter.jpg" alt="Planter">
+                <h3>Geometric Mini Planter</h3>
+                <p>$14.99</p>
+                <button onclick="addToCart('Geometric Mini Planter', 14.99)">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CART POPUP -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <span id="closeCart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cartItems"></ul>
+            <h3>Total: $<span id="cartTotal">0.00</span></h3>
+            <button id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
